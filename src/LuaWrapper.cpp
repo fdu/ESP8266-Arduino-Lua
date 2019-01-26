@@ -31,6 +31,9 @@ extern "C" {
 
 LuaWrapper::LuaWrapper() {
   _state = luaL_newstate();
+
+  luaopen_base(_state);
+
   lua_register(_state, "pinMode", lua_wrapper_pinMode);
   lua_register(_state, "digitalWrite", lua_wrapper_digitalWrite);
   lua_register(_state, "delay", lua_wrapper_delay);
