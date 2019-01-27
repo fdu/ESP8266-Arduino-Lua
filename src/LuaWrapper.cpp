@@ -34,6 +34,7 @@ LuaWrapper::LuaWrapper() {
 
   luaopen_base(_state);
   luaopen_table(_state);
+  luaopen_string(_state);
 
   lua_register(_state, "pinMode", lua_wrapper_pinMode);
   lua_register(_state, "digitalWrite", lua_wrapper_digitalWrite);
