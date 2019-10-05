@@ -1,6 +1,6 @@
-# ESP8266 Arduino Lua
+# ESP8266/ESP32 Arduino Lua
 
-This Arduino library provides the [lua](https://www.lua.org/) 5.3.4 scripting engine for ESP8266 sketches. This allows dynamic execution of code on Arduino without having to compile and flash a new firmware. As an example, the following standard Arduino functions are available in lua scripts as bindings:
+This Arduino library provides the [lua](https://www.lua.org/) 5.3.4 scripting engine for ESP8266/ESP32 sketches. This allows dynamic execution of code on Arduino without having to compile and flash a new firmware. As an example, the following standard Arduino functions are available in lua scripts as bindings:
 * *pinMode()*
 * *digitalWrite()*
 * *delay()*
