@@ -5,17 +5,20 @@ extern "C" {
     int a = luaL_checkinteger(lua, 1);
     int b = luaL_checkinteger(lua, 2);
     pinMode(a, b);
+    return 0;
   }
 
   static int lua_wrapper_digitalWrite(lua_State *lua) {
     int a = luaL_checkinteger(lua, 1);
     int b = luaL_checkinteger(lua, 2);
     digitalWrite(a, b);
+    return 0;
   }
   
   static int lua_wrapper_delay(lua_State *lua) {
     int a = luaL_checkinteger(lua, 1);
     delay(a);
+    return 0;
   }
 
   static int lua_wrapper_print (lua_State *L) {
