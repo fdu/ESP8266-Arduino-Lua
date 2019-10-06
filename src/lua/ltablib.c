@@ -256,12 +256,10 @@ typedef unsigned int IdxT;
 ** is to copy them to an array of a known type and use the array values.
 */
 static unsigned int l_randomizePivot (void) {
-  clock_t c = clock();
   time_t t = time(NULL);
-  unsigned int buff[sof(c) + sof(t)];
+  unsigned int buff[sof(t)];
   unsigned int i, rnd = 0;
-  memcpy(buff, &c, sof(c) * sizeof(unsigned int));
-  memcpy(buff + sof(c), &t, sof(t) * sizeof(unsigned int));
+  memcpy(buff, &t, sof(t) * sizeof(unsigned int));
   for (i = 0; i < sof(buff); i++)
     rnd += buff[i];
   return rnd;
@@ -440,6 +438,7 @@ static const luaL_Reg tab_funcs[] = {
 
 LUAMOD_API int luaopen_table (lua_State *L) {
   luaL_newlib(L, tab_funcs);
+  lua_setglobal(L, "table");
 #if defined(LUA_COMPAT_UNPACK)
   /* _G.unpack = table.unpack */
   lua_getfield(L, -1, "unpack");

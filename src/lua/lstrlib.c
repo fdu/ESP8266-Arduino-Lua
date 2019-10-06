@@ -1579,6 +1579,7 @@ static void createmetatable (lua_State *L) {
 LUAMOD_API int luaopen_string (lua_State *L) {
   luaL_newlib(L, strlib);
   createmetatable(L);
+  lua_setglobal(L, "string");
   return 1;
 }
 
